@@ -6,23 +6,25 @@
     font-family: "Roboto", sans-serif;
 }
 section.registerContainer{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 85%;
-    float: right;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 section.registerContainer h1{
         color: #C40C0C;
-        padding-top: 1%;
-        margin: auto;
-        font-weight: 600;
-        font-size: 48px;
-        border-bottom: 3px solid black;
-        width: 50%;
+    padding-top: 1%;
+    margin: auto;
+    font-weight: 600;
+    font-size: 48px;
+    border-bottom: 3px solid black;
+    width: 50%;
+}
+.brTitle{
+  display: none;
 }
 .containerForm{
+  margin-top: 1%;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -94,4 +96,35 @@ background: radial-gradient(circle, rgba(200,34,34,1) 0%, rgba(235,83,106,1) 0%,
     cursor: not-allowed;
     background: #555b69;
   }
-  
+  @media(max-width:736px){
+    section.registerContainer h1{
+      font-size: 26px;
+      width: auto;
+}
+form.formRegister{
+  padding: 20px;
+  max-width: 24rem;
+}
+input.inputRegister:hover,
+input.inputRegister:focus{
+  outline: none;
+  border-color: #00000090;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.822);
+}
+label.labelRegister{
+  margin-bottom: 0.25rem;
+}
+}
+@media(max-width:500px){
+  .brTitle{
+    display: block;
+    
+  }
+}
+@media(max-width:386px){
+  form.formRegister{
+    padding: 16px;
+    max-width: 22rem;
+  }
+}
+

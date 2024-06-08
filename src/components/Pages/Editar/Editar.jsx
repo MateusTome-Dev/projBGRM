@@ -1,9 +1,9 @@
 import "./index.css";
 function Editar() {
   return (
-    <section className="registerContainer">
-      <h1>Editar OCORRÊNCIA</h1>
-      <div className="containerForm">
+    <section className="editarContainer">
+      <h1 >Editar<br className="brTitleEdit" /> ocorrências</h1>
+      <div className="containerFormEdit">
         <form action="" method="POST" data-form className="formEditar">
           <label className="labelEdit" htmlFor="ID">Identificador</label>
           <input className="inputEdit" type="text" name="ID" id="ID" placeholder="Digite o identificador..."/>

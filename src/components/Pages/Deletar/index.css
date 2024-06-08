@@ -1,0 +1,103 @@
+.containerListDel {
+    text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  h1.listTitleDel {
+          color: #C40C0C;
+          padding-top: 1%;
+          margin: auto;
+          font-weight: 600;
+          font-size: 48px;
+          border-bottom: 3px solid black;
+          width: 50%;
+  }
+  table.listDel {
+      margin-top: 1%;
+    font-family: sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+  }
+  
+  th.listThDel{
+    background-color: #333;
+    color: #fff;
+  }
+  
+  th.listThDel,
+  td.listTdDel,.linkIconDel{
+    padding: 0.6rem;
+    font-size: 1.2rem;
+  }
+  
+  tbody.listBodyDel {
+    background-color: #eee;
+    color: #555;
+  }
+  .linkIconDel{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .linkIconDel img{
+    width: 30px;
+  }
+  .linkIconDel img:hover{
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 832px) {
+    h1.listTitleDel{
+      font-size: 26px;
+      width: auto;
+    }
+    thead.listHeadDel {
+      display: none;
+    }
+  
+    td.listTdDel{
+      display: block;
+      font-size: 1.0rem;
+    }
+  
+    td.listTdDel:first-child {
+      border-top: 2px solid black;
+    }
+    td.listTdDel:nth-child(1)::before {
+      content: "DATA/HORA";
+    }
+  
+    td.listTdDel:nth-child(2)::before {
+      content: "NATUREZA";
+    }
+  
+    td.listTdDel:nth-child(3)::before {
+      content: "GRUPO";
+    }
+  
+    td.listTdDel:nth-child(4)::before {
+      content: "SUBGRUPO";
+    }
+  
+    td.listTdDel:nth-child(5)::before {
+      content: "BAIRRO";
+    }
+    td.listTdDel:nth-child(6)::before {
+      content: "LAGRADOURO";
+    }
+    td.listTdDel:nth-child(7)::before {
+      content: "ID";
+    }
+  
+    td.listTdDel {
+      text-align: right;
+    }
+  
+    td.listTdDel::before {
+      float: left;
+      margin-right: 1rem;
+      font-weight: bold;
+    }
+  }
+  

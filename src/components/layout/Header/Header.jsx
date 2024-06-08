@@ -1,5 +1,7 @@
 import'./index.css'
 import Logo from'/public/img/logo.png'
+import faceIcon from'/public/img/facebook.png'
+import instaIcon from'/public/img/instagram.png'
 import React from "react";
 import {useLocation } from "react-router-dom";
 function Header(){
@@ -23,7 +25,8 @@ function Header(){
             </div>
             <div className="listContainer">
                 <ul>
-
+                    <li><a href="https://www.instagram.com/corpodebombeirosdapmesp/" target='_blank'><img src={instaIcon} alt="" /></a></li>
+                    <li><a href="https://www.facebook.com/corpodebombeirosdapmesp" target='_blank'><img src={faceIcon} alt="" /></a></li>
                 </ul>
             </div>
 

@@ -2,7 +2,7 @@ import "./index.css";
 function Form() {
   return (
     <section className="registerContainer">
-      <h1>REGISTRAR OCORRÊNCIA</h1>
+      <h1>Registrar<br className="brTitle" /> ocorrências</h1>
       <div className="containerForm">
         <form action="" method="POST" data-form className="formRegister">
           <label className="labelRegister" htmlFor="Bairro">Bairro</label>

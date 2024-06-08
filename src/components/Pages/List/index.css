@@ -26,7 +26,7 @@ th.listTh{
 }
 
 th.listTh,
-td.listTd{
+td.listTd,.linkIcon{
   padding: 0.6rem;
   font-size: 1.2rem;
 }
@@ -35,8 +35,18 @@ tbody.listBody {
   background-color: #eee;
   color: #555;
 }
-
-@media screen and (max-width: 832px) {
+.linkIcon{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.linkIcon img{
+  width: 30px;
+}
+.linkIcon img:hover{
+  cursor: pointer;
+}
+@media screen and (max-width: 977px) {
   h1.listTitle{
     font-size: 26px;
     width: auto;

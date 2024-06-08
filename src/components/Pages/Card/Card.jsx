@@ -24,7 +24,7 @@ function Card() {
                             <div className="card__data">
                                 <span className="card__description">***</span>
                                 <h2 className="card__title">Alagamento</h2>
-                                <a href="http://www.ccb.policiamilitar.sp.gov.br/portalcb/_educacao-publica/midias-edpub/folders/pdf/ENCHENTES.pdf" className="card__button">Read More</a>
+                                <a href="#" className="card__button">Read More</a>
                             </div>
                         </article>
                         <article className="card__article">
@@ -32,7 +32,7 @@ function Card() {
                             <div className="card__data">
                                 <span className="card__description">***</span>
                                 <h2 className="card__title">Desabamento</h2>
-                                <a href="http://www.ccb.policiamilitar.sp.gov.br/portalcb/_educacao-publica/midias-edpub/folders/pdf/EDIFICACAO-MAIS-SEGURA.pdf" className="card__button">Read More</a>
+                                <a href="#" className="card__button">Read More</a>
                             </div>
                         </article>
                         <article className="card__article">
@@ -40,7 +40,7 @@ function Card() {
                             <div className="card__data">
                                 <span className="card__description">***</span>
                                 <h2 className="card__title">Incêndio Florestal</h2>
-                                <a href="http://www.ccb.policiamilitar.sp.gov.br/portalcb/_educacao-publica/midias-edpub/folders/pdf/INCENDIO-EM-VEGETACAO.pdf" className="card__button">Read More</a>
+                                <a href="#" className="card__button">Read More</a>
                             </div>
                         </article>
                         <article className="card__article">
@@ -48,7 +48,7 @@ function Card() {
                             <div className="card__data">
                                 <span className="card__description">***</span>
                                 <h2 className="card__title">Acidente com animais</h2>
-                                <a href="http://www.ccb.policiamilitar.sp.gov.br/portalcb/_educacao-publica/midias-edpub/folders/pdf/ACIDENTES-COM-ANIMAIS-PECONHENTOS.pdf" className="card__button">Read More</a>
+                                <a href="#" className="card__button">Read More</a>
                             </div>
                         </article>
                         <article className="card__article">
@@ -56,7 +56,7 @@ function Card() {
                             <div className="card__data">
                                 <span className="card__description">***</span>
                                 <h2 className="card__title">Acidente</h2>
-                                <a href="http://www.ccb.policiamilitar.sp.gov.br/portalcb/_educacao-publica/midias-edpub/folders/pdf/ACIDENTE-DE-TRANSITO.pdf" className="card__button">Read More</a>
+                                <a href="#" className="card__button">Read More</a>
                             </div>
                         </article>
                     </div>

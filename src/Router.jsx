@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Card from "./components/Pages/Card/Card.jsx";
 import Register from "./components/Pages/Register/Form.jsx";

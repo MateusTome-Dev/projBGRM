@@ -13,7 +13,7 @@
   .overlay {
     width: 0;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.685);
+    background-color: rgba(0, 0, 0, 0.901);
     z-index: 10;
     position: fixed;
     left: 0;
@@ -31,16 +31,19 @@
   .overlay .linkNav {
     padding: 8px;
     text-decoration: none;
-    color: #818181;
+    color: #d1d1d1;
     display: block;
     font-size: 34px;
     transition: 0.3s;
   }
+  .closebtn{
+    color: #d1d1d1;
+  }
   .overlay .linkNav:hover,
   .overlay .linkNav:focus,
-  .closebtn:hover,
-  .closebtn:focus{
-    color: #fff;
+.closebtn:hover,
+.closebtn:focus{
+    color: #cb0e0e;
   }
   .overlay .closebtn {
     position: absolute;

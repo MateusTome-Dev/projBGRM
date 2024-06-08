@@ -26,11 +26,11 @@ function NavBar() {
       <div id="myNav" className="overlay">
         <span className="closebtn" onClick={closeNav}>&times;</span>
         <div className="overlay-content">
-          <Link className="linkNav" to="/instrucoes">INSTRUÇÕES</Link>
-          <Link className="linkNav" to="/registrar">REGISTRAR OCORRÊNCIA</Link>
-          <Link className="linkNav" to="/editar">EDITAR OCORRÊNCIA</Link>
-          <Link className="linkNav" to="/deletar">DELETAR OCORRÊNCIA</Link>
-          <Link className="linkNav" to="/listar">LISTAR OCORRÊNCIAS</Link>
+          <Link className="linkNav" to="/instrucoes" onClick={closeNav}>INSTRUÇÕES</Link>
+          <Link className="linkNav" to="/registrar" onClick={closeNav}>REGISTRAR OCORRÊNCIA</Link>
+          <Link className="linkNav" to="/editar" onClick={closeNav}>EDITAR OCORRÊNCIA</Link>
+          <Link className="linkNav" to="/deletar" onClick={closeNav}>DELETAR OCORRÊNCIA</Link>
+          <Link className="linkNav" to="/listar" onClick={closeNav}>LISTAR OCORRÊNCIAS</Link>
         </div>
       </div>
       <button className="nav-button" onClick={openNav}>

@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
  
-
 /*=============== VARIABLES CSS ===============*/
 :root {
   /*========== Colors ==========*/
@@ -17,7 +16,7 @@
   --h2-font-size: 1.25rem;
   --small-font-size: .813rem;
 }
-
+ 
 /*========== Responsive typography ==========*/
 @media screen and (min-width: 1120px) {
   :root {
@@ -50,7 +49,9 @@ img {
 .container{
     display: grid;
     place-items: center;
-    
+    margin-inline: 1.5rem;
+    padding-block: 5rem;
+ 
 }
  
 .card__container{

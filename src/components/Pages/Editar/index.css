@@ -5,29 +5,31 @@
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
-section.registerContainer{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 85%;
-    float: right;
+section.editarContainer{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-section.registerContainer h1{
+section.editarContainer h1{
         color: #C40C0C;
-        padding-top: 1%;
-        margin: auto;
-        font-weight: 600;
-        font-size: 48px;
-        border-bottom: 3px solid black;
-        width: 50%;
+    padding-top: 1%;
+    margin: auto;
+    font-weight: 600;
+    font-size: 48px;
+    border-bottom: 3px solid black;
+    width: 50%;
 }
-.containerForm{
+.brTitleEdit{
+  display: none;
+}
+.containerFormEdit{
+  margin-top: 1%;
   width: 100%;
   display: flex;
   justify-content: center;
 }
-  form.formEditar{
+  form.formEditar {
     padding: 35px;
     border-radius: 20px;
     margin-top: 1%;
@@ -53,7 +55,7 @@ background: radial-gradient(circle, rgba(200,34,34,1) 0%, rgba(235,83,106,1) 0%,
   }
   
   input.inputEdit{
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
     color: rgb(0, 0, 0);
     background: rgba(255, 255, 255, 0.822);
     border: 0.125rem solid transparent;
@@ -94,17 +96,35 @@ background: radial-gradient(circle, rgba(200,34,34,1) 0%, rgba(235,83,106,1) 0%,
     cursor: not-allowed;
     background: #555b69;
   }
-  
-  .success,
-  .error {
-    text-align: center;
+  @media(max-width:736px){
+    section.editarContainer h1{
+      font-size: 26px;
+      width: auto;
+}
+form.formEditar{
+  padding: 20px;
+  max-width: 24rem;
+}
+input.inputEdit:hover,
+input.inputEdit:focus{
+  outline: none;
+  border-color: #00000090;
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.822);
+}
+label.labelEdit{
+  margin-bottom: 0.25rem;
+}
+}
+@media(max-width:500px){
+  .brTitleEdit{
+    display: block;
+    
   }
-  
-  .success {
-    color: greenyellow;
+}
+@media(max-width:386px){
+  form.formEditar{
+    padding: 16px;
+    max-width: 22rem;
   }
-  
-  .error {
-    color: tomato;
-  }
-  
+}
+
