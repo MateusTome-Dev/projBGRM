@@ -94,8 +94,9 @@ button.btn:hover{
     transition: 0.3s ease;
 }
 .login-form input.inputSign:focus{
-    background: transparent;
-    border: 1px solid #C40C0C;
+    background-color: #fff;
+    transition: 0s;
+    border: 2px solid #C40C0C;
 }
 
 .login-form button.btn{

@@ -25,13 +25,6 @@
   }
 }
  
-/*=============== BASE ===============*/
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
- 
 body {
   font-family: var(--body-font);
   background-color: var(--body-color);
@@ -46,6 +39,7 @@ img {
 }
  
 /*=============== CARD ===============*/
+
 .container{
     display: grid;
     place-items: center;
@@ -172,38 +166,58 @@ img {
 @media screen and (max-width: 340px){
     .container{
         margin-inline: 1rem;
+        padding-block: 4rem;
     }
  
     .card__data{
         width: 250px;
         padding: 1rem;
     }
+    .card__img{
+        max-width: 420px;
+  max-height: 320px;
+    }
 }
  
 /* For medium devices */
 @media screen and (min-width: 768px){
+    .container{
+        padding-block: 3.5rem;
+    }
+    .card__data{
+        width: 250px;
+        padding: 1.5rem;
+    }
     .card__container{
         grid-template-columns: repeat(2, 1fr);
         column-gap: 1.5rem;
     }
+    .card__img{
+        max-width: 420px;
+  max-height: 320px;
+    }
+    
 }
  
  
 /* For large devices */
 @media screen and (min-width: 1120px){
     .container{
-        height: 100vh;
+        height: 85vh;
+        margin-inline: 1rem;
     }
- 
     .card__container{
         grid-template-columns: repeat(3, 1fr);
     }
  
-    .card__img{
-        width: 348px;
-    }
+    
     .card__data{
         width: 316px;
-        padding-inline: 2.5rem;
+        padding-inline: 2rem;
+    }
+ 
+    .card__data{
+        width: 250px;
+        padding: 1rem;
     }
 }
