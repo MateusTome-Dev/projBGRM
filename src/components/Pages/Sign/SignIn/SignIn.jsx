@@ -15,13 +15,12 @@ function SignIn() {
     setFormData({ ...formData, [name]: value });
   };
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if(formData.email === '' || formData.password === ''){
-      alert ('preencha os campos');
-      return
+    if (formData.email === '' || formData.password === '') {
+      alert('Preencha os campos');
+      return;
     }
 
     fetch("http://localhost:3000/login", {
@@ -31,21 +30,22 @@ function SignIn() {
       },
       body: JSON.stringify(formData),
     })
-      .then((response) =>  {
-        response.json();
-        if (!response.ok) {
-          alert('Erro ao Logar!')
-        }else{
-        window.location.href = `/instrucoes`;
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.token) {
+          localStorage.setItem('token', data.token);
+          console.log(localStorage.getItem('token'));
+          window.location.href = `/instrucoes`;
+        } else {
+          alert('Erro ao logar!');
         }
       })
-      .then((data) => {
-        console.log(data);})
       .catch((error) => {
         console.error("Erro ao fazer login:", error);
         alert("Erro ao fazer login. Por favor, tente novamente.");
       });
   };
+
   return (
     <div className="login-form">
       <div className="containerSign">
@@ -69,12 +69,10 @@ function SignIn() {
                 name="password"
                 placeholder="User Password"
                 required
-                autoFocus
                 value={formData.password}
                 onChange={handleChange}
               />
-              <button className="btn"
-              >Entrar</button>
+              <button className="btn">Entrar</button>
             </form>
             <p className="account">
               Não tem uma conta?
@@ -91,4 +89,5 @@ function SignIn() {
     </div>
   );
 }
+
 export default SignIn;

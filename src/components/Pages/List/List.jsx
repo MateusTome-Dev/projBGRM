@@ -37,6 +37,7 @@ function List() {
 
   return (
     <section className="containerList">
+    
       <h1 className="listTitle">Listar</h1>
       
         <table className="list">
