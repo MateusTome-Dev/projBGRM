@@ -14,7 +14,7 @@ function NavBar() {
   }
 
   // Lista de rotas onde a barra de navegação deve ser exibida
-  const allowedRoutes = ['/instrucoes', '/registrar', '/editar', '/deletar', '/listar'];
+  const allowedRoutes = ['/instrucoes', '/registrar', '/listar',"/editar/:id"];
 
   // Verifique se a rota atual está na lista de rotas permitidas
   if (!allowedRoutes.includes(location.pathname)) {
@@ -28,8 +28,6 @@ function NavBar() {
         <div className="overlay-content">
           <Link className="linkNav" to="/instrucoes" onClick={closeNav}>INSTRUÇÕES</Link>
           <Link className="linkNav" to="/registrar" onClick={closeNav}>REGISTRAR OCORRÊNCIA</Link>
-          <Link className="linkNav" to="/editar" onClick={closeNav}>EDITAR OCORRÊNCIA</Link>
-          <Link className="linkNav" to="/deletar" onClick={closeNav}>DELETAR OCORRÊNCIA</Link>
           <Link className="linkNav" to="/listar" onClick={closeNav}>LISTAR OCORRÊNCIAS</Link>
         </div>
       </div>

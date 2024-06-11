@@ -1,33 +1,87 @@
 import "./index.css";
-import Logo from'/public/img/logo.png'
+import Logo from "/public/img/logo.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import "./index.css";
+
 function SignIn() {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if(formData.email === '' || formData.password === ''){
+      alert ('preencha os campos');
+      return
+    }
+
+    fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) =>  {
+        response.json();
+        if (!response.ok) {
+          alert('Erro ao Logar!')
+        }else{
+        window.location.href = `/instrucoes`;
+        }
+      })
+      .then((data) => {
+        console.log(data);})
+      .catch((error) => {
+        console.error("Erro ao fazer login:", error);
+        alert("Erro ao fazer login. Por favor, tente novamente.");
+      });
+  };
   return (
     <div className="login-form">
       <div className="containerSign">
         <div className="main">
           <div className="contentSign">
             <h2>Entrar</h2>
-            <form action="#" method="post" className="formSign">
-              <input className="inputSign"
+            <form onSubmit={handleSubmit} method="post" className="formSign">
+              <input
+                className="inputSign"
                 type="email"
-                name=""
+                name="email"
                 placeholder="User Email"
                 required
                 autoFocus
+                value={formData.email}
+                onChange={handleChange}
               />
-              <input className="inputSign"
+              <input
+                className="inputSign"
                 type="password"
-                name=""
+                name="password"
                 placeholder="User Password"
                 required
                 autoFocus
+                value={formData.password}
+                onChange={handleChange}
               />
-              <button className="btn" type="submit">
-                Entrar
-              </button>
+              <button className="btn"
+              >Entrar</button>
             </form>
-            <p className="account">Não tem uma conta?<Link to="/signup" className="link">Registre-se</Link></p>
+            <p className="account">
+              Não tem uma conta?
+              <Link to="/signup" className="link">
+                Registre-se
+              </Link>
+            </p>
           </div>
           <div className="form-img">
             <img src={Logo} alt="" />

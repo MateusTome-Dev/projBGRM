@@ -38,7 +38,7 @@ tbody.listBody {
 .linkIcon{
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .linkIcon img{
   width: 30px;

@@ -8,7 +8,7 @@ function Header(){
     const location = useLocation();
 
     // Lista de rotas onde o Navbar deve ser renderizado
-    const allowedRoutes = ["/instrucoes", "/registrar", "/editar", "/deletar", "/listar"];
+    const allowedRoutes = ["/instrucoes", "/registrar", "/listar"];
 
     // Verifica se a rota atual está na lista de rotas permitidas
     const shouldRenderHeader = allowedRoutes.includes(location.pathname);

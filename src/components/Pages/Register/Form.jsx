@@ -1,23 +1,147 @@
+import React, { useState } from "react";
 import "./index.css";
+
 function Form() {
+  const [formData, setFormData] = useState({
+    descricao: "",
+    natureza: "",
+    grupo: "",
+    subgrupo: "",
+    bairro: "",
+    logradouro: "",
+    dateTime: "",
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch("http://localhost:3000/ocorrencias", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        alert("Ocorrência registrada com sucesso!");
+        setFormData({
+          descricao: "",
+          natureza: "",
+          grupo: "",
+          subgrupo: "",
+          bairro: "",
+          logradouro: "",
+          dateTime: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Erro ao registrar ocorrência:", error);
+        alert(
+          "Ocorreu um erro ao registrar a ocorrência. Por favor, tente novamente."
+        );
+      });
+  };
+
   return (
     <section className="registerContainer">
-      <h1>Registrar<br className="brTitle" /> ocorrências</h1>
+      <h1>REGISTRAR OCORRÊNCIA</h1>
       <div className="containerForm">
-        <form action="" method="POST" data-form className="formRegister">
-          <label className="labelRegister" htmlFor="Bairro">Bairro</label>
-          <input className="inputRegister" type="text" name="Bairro" id="Bairro" placeholder="Digite o bairro..."/>
-          <label className="labelRegister" htmlFor="Grupo">Grupo</label>
-          <input className="inputRegister" type="text" name="Grupo" id="Grupo" placeholder="Digite o grupo..."/>
-          <label className="labelRegister" htmlFor="Descricao">Descrição</label>
-          <input className="inputRegister" type="text" name="Descricao" id="Descricao" placeholder="Digite a descrição..."/>
+        <form
+          onSubmit={handleSubmit}
+          method="post"
+          data-form
+          className="formRegister"
+        >
+          <label htmlFor="bairro" className="labelRegister">
+            Bairro
+          </label>
+          <input
+            type="text"
+            name="bairro"
+            id="bairro"
+            placeholder="Digite o bairro..."
+            value={formData.bairro}
+            onChange={handleChange}
+            className="inputRegister"
+          />
+          <label htmlFor="grupo" className="labelRegister">
+            Grupo
+          </label>
+          <input
+            type="text"
+            name="grupo"
+            id="grupo"
+            placeholder="Digite o grupo..."
+            value={formData.grupo}
+            onChange={handleChange}
+            className="inputRegister"
+          />
+          <label htmlFor="descricao" className="labelRegister">
+            Descrição
+          </label>
+          <input
+            type="text"
+            name="descricao"
+            id="descricao"
+            placeholder="Digite a descrição..."
+            value={formData.descricao}
+            onChange={handleChange}
+            className="inputRegister"
+          />
 
-          <label className="labelRegister" htmlFor="datetime">Selecione a data e hora:</label>
-          <input className="inputRegister" type="datetime-local" id="datetime" name="datetime" placeholder="Digite a data..."/>
-          <label className="labelRegister" htmlFor="Natureza">Natureza</label>
-          <input className="inputRegister" type="text" name="Natureza" id="Natureza" placeholder="Digite a natureza..."/>
-          <label className="labelRegister" htmlFor="Logradouro">Logradouro</label>
-          <input className="inputRegister" type="text" name="Logradouro" id="Logradouro" placeholder="Digite o logradouro..."/>
+          <label htmlFor="datetime" className="labelRegister">
+            Selecione a data e hora:
+          </label>
+          <input
+            type="datetime-local"
+            id="datetime"
+            name="dateTime"
+            value={formData.dateTime}
+            onChange={handleChange}
+            className="inputRegister"
+          />
+          <label htmlFor="natureza" className="labelRegister">
+            Natureza
+          </label>
+          <input
+            type="text"
+            name="natureza"
+            id="natureza"
+            placeholder="Digite a natureza..."
+            value={formData.natureza}
+            onChange={handleChange}
+            className="inputRegister"
+          />
+          <label htmlFor="logradouro" className="labelRegister">
+            Logradouro
+          </label>
+          <input
+            type="text"
+            name="logradouro"
+            id="logradouro"
+            placeholder="Digite o logradouro..."
+            value={formData.logradouro}
+            onChange={handleChange}
+            className="inputRegister"
+          />
+          <label htmlFor="subgrupo" className="labelRegister">
+            SubGrupo
+          </label>
+          <input
+            type="text"
+            name="subgrupo"
+            id="subgrupo"
+            placeholder="Digite o SubGrupo..."
+            value={formData.subgrupo}
+            onChange={handleChange}
+            className="inputRegister"
+          />
 
           <button type="submit" data-button className="btnRegister">
             Enviar
@@ -27,4 +151,5 @@ function Form() {
     </section>
   );
 }
+
 export default Form;
