@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./index.css";
-
+import logo from '/public/img/logo.png'
+import { toast } from "react-toastify";
 function Form() {
+  // Declara o estado formData para armazenar os dados do formulário
   const [formData, setFormData] = useState({
     descricao: "",
     natureza: "",
@@ -9,27 +11,40 @@ function Form() {
     subgrupo: "",
     bairro: "",
     logradouro: "",
-    dateTime: "",
+    datetime: "",
   });
 
+  // Função para lidar com a mudança de valor nos campos do formulário
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // Função para lidar com o envio do formulário
   const handleSubmit = (event) => {
-    event.preventDefault();
-    fetch("http://localhost:3000/ocorrencias", {
-      method: "POST",
+    event.preventDefault(); // Previne o comportamento padrão do formulário de recarregar a página
+    
+    if(formData.datetime === '' || formData.bairro === '' || formData.descricao === ''|| formData.natureza === '' 
+      || formData.grupo === '' || formData.subgrupo === '' || formData.logradouro === ''){
+        toast.info('Preencha todos os campos')
+        return
+      }
+
+
+
+    // Faz uma requisição POST para a URL de ocorrências
+    fetch("https://apicrudnode.onrender.com/ocorrencia", {
+      method: "POST", // Define o método HTTP como POST
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json", // Define o tipo de conteúdo como JSON
       },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(formData), // Converte os dados do formulário para JSON
     })
-      .then((response) => response.json())
+      .then((response) => response.json()) // Converte a resposta para JSON
       .then((data) => {
-        console.log(data);
-        alert("Ocorrência registrada com sucesso!");
+        console.log(data); // Exibe a resposta no console
+        toast.success("Ocorrência registrada com sucesso!"); // Exibe um alerta indicando sucesso no registro
+        // Reinicia os campos do formulário
         setFormData({
           descricao: "",
           natureza: "",
@@ -37,12 +52,12 @@ function Form() {
           subgrupo: "",
           bairro: "",
           logradouro: "",
-          dateTime: "",
+          datetime: "",
         });
       })
       .catch((error) => {
-        console.error("Erro ao registrar ocorrência:", error);
-        alert(
+        console.error("Erro ao registrar ocorrência:", error); // Exibe o erro no console
+        toast.error(
           "Ocorreu um erro ao registrar a ocorrência. Por favor, tente novamente."
         );
       });
@@ -101,8 +116,8 @@ function Form() {
           <input
             type="datetime-local"
             id="datetime"
-            name="dateTime"
-            value={formData.dateTime}
+            name="datetime"
+            value={formData.datetime}
             onChange={handleChange}
             className="inputRegister"
           />
@@ -147,6 +162,10 @@ function Form() {
             Enviar
           </button>
         </form>
+        <div className="logoRegister">
+            <img src={logo} alt="" />
+        </div>
+
       </div>
     </section>
   );

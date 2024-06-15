@@ -3,36 +3,40 @@ import delIcon from "/public/img/lixeira.png";
 import React, { useEffect, useState } from "react";
 import "./index.css";
 function List() {
+  // Declara o estado occ para armazenar a lista de ocorrências
   const [occ, setOcc] = useState([]);
 
+  // Usa o hook useEffect para buscar as ocorrências ao montar o componente
   useEffect(() => {
-    fetchOcorrencias();
+    fetchOcorrencias(); // Chama a função para buscar ocorrências
   }, []);
 
+  // Função para buscar as ocorrências do servidor
   function fetchOcorrencias() {
-    fetch("http://localhost:3000/ocorrencia", {
-      method: "GET",
+    fetch("https://apicrudnode.onrender.com/ocorrencia", {
+      method: "GET", // Define o método HTTP como GET
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json", // Define o tipo de conteúdo como JSON
       },
     })
-      .then((result) => result.json())
+      .then((result) => result.json()) // Converte a resposta para JSON
       .then((data) => {
-        setOcc(data);
+        setOcc(data); // Define o estado occ com os dados recebidos
       })
-      .catch((erro) => console.error("Erro ao buscar dados:", erro));
+      .catch((erro) => console.error("Erro ao buscar dados:", erro)); // Exibe erros no console
   }
 
+  // Função para deletar uma ocorrência pelo ID
   function deleteOccurrence(id) {
-    fetch(`http://localhost:3000/ocorrencia/${id}`, {
-      method: "DELETE",
+    fetch(`https://apicrudnode.onrender.com/ocorrencia/${id}`, {
+      method: "DELETE", // Define o método HTTP como DELETE
     })
-      .then((result) => result.json())
+      .then((result) => result.json()) // Converte a resposta para JSON
       .then((data) => {
-        console.log(data);
-        fetchOcorrencias();
+        console.log(data); // Exibe a resposta no console
+        fetchOcorrencias(); // Atualiza a lista de ocorrências após a exclusão
       })
-      .catch((erro) => console.error("Erro ao excluir ocorrência:", erro));
+      .catch((erro) => console.error("Erro ao excluir ocorrência:", erro)); // Exibe erros no console
   }
 
   return (
