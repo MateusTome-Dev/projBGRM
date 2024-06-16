@@ -1,9 +1,13 @@
 import { useParams } from "react-router-dom";
 import React, { useState , useEffect } from "react";
 import "./index.css";
+import logo from "/public/img/logo.png";
 import { toast } from "react-toastify";
- 
 function Editar() {
+
+
+
+
   const params = useParams(); // Busca os parâmetros passados pela URL
  
   // Define o estado formData para armazenar dados do formulário
@@ -98,7 +102,6 @@ function Editar() {
         toast.error("Erro ao editar ocorrência");
       });
   };
- 
   return (
     <section className="editarContainer">
       <h1>
@@ -112,7 +115,7 @@ function Editar() {
           data-form
           className="formEditar"
         >
-          <label className="labelEdit" htmlFor="ID">
+          <label className=" idEdit" htmlFor="ID">
             Identificador
           </label>
           <h1 id="h1Style">{params.id}</h1>
@@ -124,7 +127,7 @@ function Editar() {
             type="text"
             name="bairro"
             id="Bairro"
-            placeholder="Digite aqui o Bairro"
+            placeholder={occ.bairro}
             onChange={handleChange}
             value={formData.bairro}
           />
@@ -136,7 +139,7 @@ function Editar() {
             type="text"
             name="grupo"
             id="grupo"
-            placeholder="Digite aqui o Grupo"
+            placeholder={occ.grupo} 
             onChange={handleChange}
             value={formData.grupo}
           />
@@ -148,7 +151,7 @@ function Editar() {
             type="datetime-local"
             id="datetime"
             name="datetime"
-            placeholder="Digite aqui a Data e Hora"
+            placeholder="{}"
             onChange={handleChange}
             value={formData.datetime}
           />
@@ -160,7 +163,7 @@ function Editar() {
             type="text"
             name="natureza"
             id="Natureza"
-            placeholder="Digite aqui a Natureza"
+            placeholder={occ.natureza}
             onChange={handleChange}
             value={formData.natureza}
           />
@@ -172,31 +175,34 @@ function Editar() {
             type="text"
             name="logradouro"
             id="Logradouro"
-            placeholder="Digite aqui o Logradouro"
+            placeholder={occ.logradouro}
             onChange={handleChange}
             value={formData.logradouro}
           />
- 
-          <label htmlFor="subgrupo" className="labelRegister">
+
+          <label htmlFor="subgrupo" className="labelEdit">
             SubGrupo
           </label>
           <input
             type="text"
             name="subgrupo"
             id="subgrupo"
-            placeholder="Digite aqui o SubGrupo"
+            placeholder={occ.subgrupo}
             value={formData.subgrupo}
             onChange={handleChange}
-            className="inputRegister"
+            className="inputEdit"
           />
- 
+
           <button className="btnEdit" type="submit" data-button>
             Enviar
           </button>
         </form>
+        <div className="logoEdit">
+            <img src={logo} alt="" />
+        </div>
       </div>
     </section>
   );
 }
- 
-export default Editar
+
+export default Editar;
