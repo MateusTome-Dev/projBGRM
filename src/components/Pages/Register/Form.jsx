@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./index.css";
-import logo from '/public/img/logo.png'
 import { toast } from "react-toastify";
 function Form() {
-  // Declara o estado formData para armazenar os dados do formulário
+  // Definie  o estado de formData para armazenar dados futuros
   const [formData, setFormData] = useState({
     natureza: "",
     grupo: "",
@@ -12,27 +11,27 @@ function Form() {
     logradouro: "",
     datetime: "",
   });
-
-  // Função para lidar com a mudança de valor nos campos do formulário
+ 
+  //Componente para lidar com as mudanças de informações nos campos de entrada
   const handleChange = (event) => {
     const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [name]: value});
   };
-
-  // Função para lidar com o envio do formulário
+ 
+  //Componente de envio de dados para Api
   const handleSubmit = (event) => {
     event.preventDefault(); // Previne o comportamento padrão do formulário de recarregar a página
-    
-    if(formData.datetime === '' || formData.bairro === '' || formData.natureza === '' 
+   
+    //Verificação dos campos
+    if(formData.datetime === '' || formData.bairro === '' || formData.natureza === ''
       || formData.grupo === '' || formData.subgrupo === '' || formData.logradouro === ''){
         toast.info('Preencha todos os campos')
         return
       }
-
-
-
-    // Faz uma requisição POST para a URL de ocorrências
-    fetch("https://apicrudnode.onrender.com/ocorrencia", {
+ 
+ 
+      //EndPoint da Api
+      fetch("https://apicrudnode.onrender.com/ocorrencia", {
       method: "POST", // Define o método HTTP como POST
       headers: {
         "Content-Type": "application/json", // Define o tipo de conteúdo como JSON
@@ -60,7 +59,7 @@ function Form() {
         );
       });
   };
-
+ 
   return (
     <section className="registerContainer">
       <h1>REGISTRAR OCORRÊNCIA</h1>
@@ -79,8 +78,8 @@ function Form() {
             name="bairro"
             id="bairro"
             placeholder="Digite o bairro..."
-            value={formData.bairro}
-            onChange={handleChange}
+            value={formData.bairro} //Definindo o estado do campo natureza
+            onChange={handleChange}//Chamando o evento para lidar com as mudanças de evento no campo
             className="inputRegister"
           />
           <label htmlFor="grupo" className="labelRegister">
@@ -95,7 +94,7 @@ function Form() {
             onChange={handleChange}
             className="inputRegister"
           />
-
+ 
           <label htmlFor="datetime" className="labelRegister">
             Selecione a data e hora:
           </label>
@@ -143,18 +142,14 @@ function Form() {
             onChange={handleChange}
             className="inputRegister"
           />
-
+ 
           <button type="submit" data-button className="btnRegister">
             Enviar
           </button>
         </form>
-        <div className="logoRegister">
-            <img src={logo} alt="" />
-        </div>
-
       </div>
     </section>
   );
 }
-
+ 
 export default Form;
