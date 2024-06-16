@@ -6,7 +6,6 @@ import Listar from "../src/components/Pages/List/List.jsx";
 import SignIn from "../src/components/Pages/Sign/SignIn/SignIn.jsx";
 import Header from "../src/components/layout/Header/Header.jsx";
 import Navbar from "../src/components/layout/Navbar/Nav.jsx";
-import Footer from "../src/components/layout/Footer/Footer.jsx";
 import HeaderHome from "../src/components/layout/HeaderHome/Header.jsx";
 import SignUp from "../src/components/Pages/Sign/SignUp/SignUp.jsx";
 import PrivateRoute from '../src/components/PrivateRoute.jsx'; 
@@ -25,7 +24,7 @@ const Router = () => {
         <Route path="/editar/:id" element={<PrivateRoute element={<Editar />} />} />
         <Route path="/listar" element={<PrivateRoute element={<Listar />} />} />
       </Routes>
-      <Footer/>
+
 
     </BrowserRouter>
   );
