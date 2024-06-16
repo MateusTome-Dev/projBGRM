@@ -5,7 +5,6 @@ import { toast } from "react-toastify";
 function Form() {
   // Declara o estado formData para armazenar os dados do formulário
   const [formData, setFormData] = useState({
-    descricao: "",
     natureza: "",
     grupo: "",
     subgrupo: "",
@@ -24,7 +23,7 @@ function Form() {
   const handleSubmit = (event) => {
     event.preventDefault(); // Previne o comportamento padrão do formulário de recarregar a página
     
-    if(formData.datetime === '' || formData.bairro === '' || formData.descricao === ''|| formData.natureza === '' 
+    if(formData.datetime === '' || formData.bairro === '' || formData.natureza === '' 
       || formData.grupo === '' || formData.subgrupo === '' || formData.logradouro === ''){
         toast.info('Preencha todos os campos')
         return
@@ -46,7 +45,6 @@ function Form() {
         toast.success("Ocorrência registrada com sucesso!"); // Exibe um alerta indicando sucesso no registro
         // Reinicia os campos do formulário
         setFormData({
-          descricao: "",
           natureza: "",
           grupo: "",
           subgrupo: "",

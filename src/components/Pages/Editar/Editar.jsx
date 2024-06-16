@@ -11,7 +11,6 @@ function Editar() {
 
   const params = useParams();
   const [formData, setFormData] = useState({
-    descricao: "",
     natureza: "",
     grupo: "",
     bairro: "",
@@ -31,7 +30,6 @@ function Editar() {
     if (
       formData.datetime === "" ||
       formData.bairro === "" ||
-      formData.descricao === "" ||
       formData.natureza === "" ||
       formData.grupo === "" ||
       formData.subgrupo === "" ||
