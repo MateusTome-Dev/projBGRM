@@ -119,17 +119,17 @@ function Editar() {
             Identificador
           </label>
           <h1 id="h1Style">{params.id}</h1>
-          <label className="labelEdit" htmlFor="Bairro">
-            Bairro
+          <label className="labelEdit" htmlFor="Natureza">
+            Natureza
           </label>
           <input
             className="inputEdit"
             type="text"
-            name="bairro"
-            id="Bairro"
-            placeholder={occ.bairro}
+            name="natureza"
+            id="Natureza"
+            placeholder={occ.natureza}
             onChange={handleChange}
-            value={formData.bairro}
+            value={formData.natureza}
           />
           <label className="labelEdit" htmlFor="Grupo">
             Grupo
@@ -143,6 +143,18 @@ function Editar() {
             onChange={handleChange}
             value={formData.grupo}
           />
+          <label htmlFor="subgrupo" className="labelEdit">
+            SubGrupo
+          </label>
+          <input
+            type="text"
+            name="subgrupo"
+            id="subgrupo"
+            placeholder={occ.subgrupo}
+            value={formData.subgrupo}
+            onChange={handleChange}
+            className="inputEdit"
+          />
           <label className="labelEdit" htmlFor="datetime">
             Selecione a data e hora:
           </label>
@@ -155,17 +167,18 @@ function Editar() {
             onChange={handleChange}
             value={formData.datetime}
           />
-          <label className="labelEdit" htmlFor="Natureza">
-            Natureza
+          
+          <label className="labelEdit" htmlFor="Bairro">
+            Bairro
           </label>
           <input
             className="inputEdit"
             type="text"
-            name="natureza"
-            id="Natureza"
-            placeholder={occ.natureza}
+            name="bairro"
+            id="Bairro"
+            placeholder={occ.bairro}
             onChange={handleChange}
-            value={formData.natureza}
+            value={formData.bairro}
           />
           <label className="labelEdit" htmlFor="Logradouro">
             Logradouro
@@ -180,18 +193,7 @@ function Editar() {
             value={formData.logradouro}
           />
 
-          <label htmlFor="subgrupo" className="labelEdit">
-            SubGrupo
-          </label>
-          <input
-            type="text"
-            name="subgrupo"
-            id="subgrupo"
-            placeholder={occ.subgrupo}
-            value={formData.subgrupo}
-            onChange={handleChange}
-            className="inputEdit"
-          />
+          
 
           <button className="btnEdit" type="submit" data-button>
             Enviar

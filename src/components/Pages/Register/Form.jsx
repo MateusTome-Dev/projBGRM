@@ -71,15 +71,15 @@ const handleSubmit = (event) => {
           data-form
           className="formRegister"
         >
-          <label htmlFor="bairro" className="labelRegister">
-            Bairro
+          <label htmlFor="natureza" className="labelRegister">
+            Natureza
           </label>
           <input
             type="text"
-            name="bairro"
-            id="bairro"
-            placeholder="Digite o bairro..."
-            value={formData.bairro}
+            name="natureza"
+            id="natureza"
+            placeholder="Digite a natureza..."
+            value={formData.natureza}
             onChange={handleChange}
             className="inputRegister"
           />
@@ -95,7 +95,18 @@ const handleSubmit = (event) => {
             onChange={handleChange}
             className="inputRegister"
           />
-
+          <label htmlFor="subgrupo" className="labelRegister">
+            SubGrupo
+          </label>
+          <input
+            type="text"
+            name="subgrupo"
+            id="subgrupo"
+            placeholder="Digite o SubGrupo..."
+            value={formData.subgrupo}
+            onChange={handleChange}
+            className="inputRegister"
+          />
           <label htmlFor="datetime" className="labelRegister">
             Selecione a data e hora:
           </label>
@@ -107,15 +118,15 @@ const handleSubmit = (event) => {
             onChange={handleChange}
             className="inputRegister"
           />
-          <label htmlFor="natureza" className="labelRegister">
-            Natureza
+          <label htmlFor="bairro" className="labelRegister">
+            Bairro
           </label>
           <input
             type="text"
-            name="natureza"
-            id="natureza"
-            placeholder="Digite a natureza..."
-            value={formData.natureza}
+            name="bairro"
+            id="bairro"
+            placeholder="Digite o bairro..."
+            value={formData.bairro}
             onChange={handleChange}
             className="inputRegister"
           />
@@ -131,18 +142,7 @@ const handleSubmit = (event) => {
             onChange={handleChange}
             className="inputRegister"
           />
-          <label htmlFor="subgrupo" className="labelRegister">
-            SubGrupo
-          </label>
-          <input
-            type="text"
-            name="subgrupo"
-            id="subgrupo"
-            placeholder="Digite o SubGrupo..."
-            value={formData.subgrupo}
-            onChange={handleChange}
-            className="inputRegister"
-          />
+          
 
           <button type="submit" data-button className="btnRegister">
             Enviar
