@@ -142,18 +142,6 @@ function Editar() {
             onChange={handleChange}
             value={formData.grupo}
           />
-          <label className="labelEdit" htmlFor="Descricao">
-            Descrição
-          </label>
-          <input
-            className="inputEdit"
-            type="text"
-            name="descricao"
-            id="Descricao"
-            placeholder={occ.descricao}
-            onChange={handleChange}
-            value={formData.descricao}
-          />
           <label className="labelEdit" htmlFor="datetime">
             Selecione a data e hora:
           </label>

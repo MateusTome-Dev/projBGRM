@@ -97,18 +97,6 @@ function Form() {
             onChange={handleChange}
             className="inputRegister"
           />
-          <label htmlFor="descricao" className="labelRegister">
-            Descrição
-          </label>
-          <input
-            type="text"
-            name="descricao"
-            id="descricao"
-            placeholder="Digite a descrição..."
-            value={formData.descricao}
-            onChange={handleChange}
-            className="inputRegister"
-          />
 
           <label htmlFor="datetime" className="labelRegister">
             Selecione a data e hora:

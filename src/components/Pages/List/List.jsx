@@ -52,7 +52,7 @@ function List() {
               <th className="listTh">GRUPO</th>
               <th className="listTh">SUBGRUPO</th>
               <th className="listTh">BAIRRO</th>
-              <th className="listTh">LAGRADOURO</th>
+              <th className="listTh">LOGRADOURO</th>
               <th className="listTh">ID</th>
               <th className="listTh">AÇÃO</th>
             </tr>
